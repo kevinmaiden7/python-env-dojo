@@ -1,9 +1,9 @@
 # Working with Python Environments
 
 # Table of Contents
-1. [Windows](##Windows)
-2. [Linux](##Linux)
-3. [Conda*](##Conda)
+1. [Windows](#Windows)
+2. [Linux](#Linux)
+3. [Conda*](#Conda)
 
 Recommended*
 
