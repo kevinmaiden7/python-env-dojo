@@ -2,6 +2,8 @@
 
 When working on Python projects, it is important to manage isolated "environments"; preferably one for each individual project. Thus, we can avoid conflicts on package versioning among projects, as they will have different dependencies.
 
+![](images/python-envs.png?raw=true)
+
 # Table of Contents
 1. [Windows](#Windows)
 2. [Linux](#Linux)
