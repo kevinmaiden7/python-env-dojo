@@ -1,5 +1,7 @@
 # Working with Python Environments
 
+When working on Python projects, it is important to manage isolated "environments"; preferably one for each individual project. Thus, we can avoid conflicts on package versioning among projects, as they will have different dependencies.
+
 # Table of Contents
 1. [Windows](#Windows)
 2. [Linux](#Linux)
@@ -9,7 +11,7 @@ Recommended*
 
 ## Windows
 
-### How to install Python
+### How to Install Python
 
 You can download it from the [official page](https://www.python.org/downloads/).
 
@@ -23,7 +25,7 @@ Press **Install Now** and wait.
 
 ![](images/image3.png?raw=true)
 
-After the installation is complete, we can exit the wizard by pressing **Close**.
+After the installation completes, we can exit the wizard by pressing **Close**.
 
 Afterwards, we can open some CLI, like CMD or PowerShell, and check our Python version:
 
@@ -36,7 +38,7 @@ This should prompt the version of Python we previously downloaded and installed.
 
 ### Configuring a Virtual Environment
 
-We will take advantage of the tool **venv**, which is a standard Python library since version 3.3.
+In this case, we will take advantage of the tool **venv**, which is a standard Python library since version 3.3.
 
 Let's create first a folder, and then a virtual environment named *env-project*:
 
@@ -155,3 +157,91 @@ $ deactivate
 ```
 
 ## Conda
+
+We can also use [Anaconda](https://www.anaconda.com/), which is an open source ecosystem for working with Python and other related tools such as Jupyter Notebook.
+
+### Download and Installation
+
+Go to [Anaconda Individual Edition page](https://www.anaconda.com/products/individual); then, search for the Anaconda Installers section. Once there, choose the installer according to your operating system and machine specifications.
+
+These are the most common selections:
+
+![](images/anaconda_installers.png?raw=true)
+
+Download it and perform the installation process on your system.
+
+**Once completed, you can check your installation as follows:**
+
+#### Windows
+
+Search for the Anaconda Prompt from the system menu:
+
+![](images/verify_windows_1.png?raw=true)
+
+Open it, and then type `conda --version`.
+
+You should see the anaconda version installed printed. For example:
+
+```powershell
+(base) > conda --version
+Conda 4.10.3
+```
+
+*You can also type `conda info` to see more information, including the Python version installed.*
+
+#### Linux or macOS
+
+Open a terminal and type either `conda --version` or `conda info`.
+
+### Create a Virtual Environment
+
+By default, we are given a conda environment named **base**:
+
+```bash
+(base) > 
+```
+
+We can create a new virtual environment by typing:
+
+```bash
+(base) > conda create -n env-project
+```
+
+You can also set a specific Python version (or any other package you will need):
+
+```bash
+(base) > conda create -n env-project python=3.8
+```
+
+Then, you can check the list of available Conda environments with:
+
+```cmd
+(base) > conda env list
+# conda environments:
+#
+base                  *  C:\User\anaconda3
+env-project              C:\User\anaconda3\envs\env-project
+```
+
+### Activate a Virtual Environment
+
+```bash
+(base) > conda activate env-project
+```
+Next, you will see how the prefix prompt is replaced to indicate you are working now on the chosen environment:
+
+```bash
+(env-project) > 
+```
+
+### Deactivate a Virtual Environment
+
+```bash
+(env-project) > conda deactivate
+```
+
+As a result, you will be set back to the default conda environment:
+
+```bash
+(base) > 
+```
